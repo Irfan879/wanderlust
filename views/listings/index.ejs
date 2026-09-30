@@ -1,0 +1,84 @@
+<% layout("/layouts/boilerplate") %>
+
+<div id="filters">
+      <div class="filter">
+        <div><i class="fa-solid fa-fire"></i></div>
+        <p>Trending</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-bed"></i></div>
+        <p>Rooms</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-mountain-city"></i></div>
+        <p>Top cities</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-brands fa-fort-awesome"></i></i></div>
+        <p>Castles</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-person-skiing"></i></div>
+        <p>Ski-in/out</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-mountain"></i></div>
+        <p>Mountains</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-snowflake"></i></i></div>
+        <p>Arctic</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-mug-saucer"></i></i></div>
+        <p>Bed & breakfasts</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-campground"></i></i></div>
+        <p>Camping</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-key"></i></div>
+        <p>New</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-umbrella-beach"></i></div>
+        <p>Beach</p>
+      </div>
+       <div class="filter">
+        <div><i class="fa-solid fa-mosque"></i></div>
+        <p>Mosque</p>
+      </div> 
+       <div class="filter">
+        <div><i class="fa-solid fa-ship"></i></div>
+        <p>Boats</p>
+      </div>  
+       <div class="filter">
+        <div><i class="fa-solid fa-ship"></i></div>
+        <p>Boats</p>
+      </div>   
+      </div>    
+  
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+<%  for(let listing of allListings){%>
+    <a href="/listings/<%= listing._id  %>" class="listing-link">
+    <div class="card col listing-card">
+  <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height: 20rem"/>
+  <div class="card-img-overlay"></div>
+  <div class="card-body">
+    <p class="card-text">
+        <b><%= listing.title %></b> <br>
+        Rs <%= listing.price.toLocaleString("en-PK") %> / night
+    </div>
+</div>
+</a>
+   <% } %> 
+</div>
+
+
+<script>
+  let taxSwitch = document.getElementById("switchCheckDefault");
+  taxSwitch.addEventListener("click", () => {
+    
+  })
+</script>
